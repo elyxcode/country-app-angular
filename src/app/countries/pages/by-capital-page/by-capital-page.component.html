@@ -5,10 +5,20 @@
   <div class="col">
     <!-- SearchBox -->
     Searchs
-    <shared-search-box placeholder="este es un nuevo placeholder" />
+    <shared-search-box
+      (onValue)="searchByCapital($event)"
+      placeholder="este es un nuevo placeholder"
+    />
   </div>
 </div>
 
 <div class="row">
-  <div class="col">tabla de resultados</div>
+  <div class="col">
+    <hr />
+    <ul>
+      <li *ngFor="let country of countries">
+        {{ country.capital }} - {{ country.population }}
+      </li>
+    </ul>
+  </div>
 </div>

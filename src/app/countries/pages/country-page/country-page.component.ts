@@ -2,14 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CountriesService } from '../../services/countries.services';
 import { switchMap } from 'rxjs';
+import { Country } from '../../interfaces/country.interface';
 
 @Component({
   selector: 'countries-country-page',
   standalone: false,
   templateUrl: './country-page.component.html',
-  styles: ``
+  styles: `
+
+  `
 })
 export class CountryPageComponent implements OnInit {
+
+  public country?: Country;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -24,11 +29,10 @@ export class CountryPageComponent implements OnInit {
     )
     .subscribe(
       (country) => {
-        if(!country){
-          return this.router.navigateByUrl('');
-        }
+        if(!country) return this.router.navigateByUrl('');
 
-        return;
+        return this.country = country;
+        // return
       }
     )
   }

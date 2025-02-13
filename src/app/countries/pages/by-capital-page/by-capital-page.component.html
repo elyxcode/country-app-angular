@@ -15,6 +15,10 @@
 <div class="row">
   <div class="col">
     <hr />
+    <shared-loading-spinner
+      loadingMessage="Searching capital..."
+      *ngIf="isLoading"
+    />
     <countries-country-table [countries]="countries" />
   </div>
 </div>

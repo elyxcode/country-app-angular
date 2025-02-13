@@ -3,7 +3,7 @@ import { CountriesService } from '../../services/countries.services';
 import { Country } from '../../interfaces/country.interface';
 
 @Component({
-  selector: 'app-by-capital-page',
+  selector: 'countries-by-capital-page',
   standalone: false,
   templateUrl: './by-capital-page.component.html',
   styles: ``
@@ -21,8 +21,6 @@ export class ByCapitalPageComponent {
     .subscribe(countries =>
       this.countries = countries
     )
-    console.log({ term })
-    console.log({ countries: this.countries})
   }
 
 }
